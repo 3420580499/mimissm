@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--mybatis的主配置文件-->
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+    <!--分页插件的配置-->
+<!--这个插件真的给我整吐了,一直显示找不到类-->
+<!--原因是我的maven的runner的jre是1.7的,之前的改为了1.8,新建工程又变成了1.7(编译能过,测试就报错,然后影响了这里的报错)-->
+<!--好像不是上面的原因,真正原因是idea2021.1的关于maven的配置有问题,我们要勾选maven中runner中的第一个按钮-->
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor" />
+    </plugins>
+<!--其他东西已经被spring整合光了-->
+</configuration>
